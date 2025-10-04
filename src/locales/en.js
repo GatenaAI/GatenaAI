@@ -21,7 +21,7 @@ const en = {
   servicesEquityText: 'Using AI and best practices, we deliver efficient, proactive web development, shortening delivery times and materializing complex ideas.',
   aboutContentOne: `${startupName} (Cat – Antenna – AI) combines curiosity, idea-connecting skills, and novelty. Our name and style pay tribute to neural networks and a famous 1999 computer vision experiment where scientists studied how a cat perceived edges and shapes. Even seemingly simple stimuli activated key brain areas, showing that small discoveries can have huge impacts. Today, these insights inspire us to use AI to enhance human intelligence.`,
   aboutContentTwo: `At ${startupName}, we research and combine knowledge to build globally functional AI systems. We apply these lessons to innovate and create real value, with a young, passionate team strengthening critical skills that AI cannot yet replace.`,
-  aboutContentThree: `Want to see the feline inspiration behind our work? Check out our "Cat Hall of Fame" and meet the cats that motivate us to explore, learn, and create innovation.`,
+  aboutContentThree: `If you want to discover the feline inspiration behind our work, visit our:`,
   wallOfFame: 'Wall of Fame',
   mission: 'Mission',
   mission_goal: `At ${startupName}, we see developing countries as talent banks often without local support. As Bolivians, we seek global opportunities and believe in the unlimited potential of motivated young talent. We recruit, train, and empower ambitious professionals, giving them the tools and knowledge to thrive internationally. Our focus on AI and crypto-assets turns brain drain into opportunity, transforming potential into global projects and contributing to Bolivia's development.`,
