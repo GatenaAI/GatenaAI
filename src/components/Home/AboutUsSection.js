@@ -8,7 +8,7 @@ export default function AboutUsSection({ t }) {
   const { language } = useLanguage();
   const navigate = useNavigate();
 
-  const scrollMarginTop = language === 'de' ? '50px' : '90px';
+  const scrollMarginTop = language === 'de' ? '50px' : '110px';
 
   const handleWallOfFame = () => {
     navigate('/walloffame');
