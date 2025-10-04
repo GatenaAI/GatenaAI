@@ -43,7 +43,10 @@ const de = {
   upload: 'CV hochladen',
   send: 'Senden',
   language: 'Sprache',
-  madeBy: `Gemacht mit ♥ von ${startupName} 2025 ©`
+  madeBy: `Gemacht mit ♥ von ${startupName} 2025 ©`,
+  wofTitle: 'Im Katzenauge (1999)',
+  wofCaption: '1999 untersuchte Yang Dan, wie Katzen Formen und Bewegungen wahrnehmen, und entdeckte, dass bestimmte Gehirnregionen zuerst auf Kanten und Muster reagieren. Diese Erkenntnis wurde zu einem Grundpfeiler der frühen KI-Bildverarbeitung und inspirierte convolutional neural networks (CNNs), die Kanten, Formen und Objekte in Bildern erkennen. Durch das Lernen von der natürlichen Sicht kann KI heute Bilder „sehen“ und interpretieren, was Anwendungen von der Bildklassifizierung bis zur fortgeschrittenen Computer Vision ermöglicht.',
+  wofCompanion: 'Diese niedlichen Begleiter sind Teil unseres Teams und unserer Kundenfamilie. Möchten Sie Ihre Katze hier sehen? Kontaktieren Sie uns und werden Sie Teil unserer Katzen-Galerie!'
 };
 
 export default de;

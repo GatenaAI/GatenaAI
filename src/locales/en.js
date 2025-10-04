@@ -43,7 +43,10 @@ const en = {
   upload: 'Upload your CV',
   send: 'Send',
   language: 'Language',
-  madeBy: `Made with ♥ by ${startupName} 2025 ©`
+  madeBy: `Made with ♥ by ${startupName} 2025 ©`,
+  wofTitle: `In a Cat's Eye (1999)`,
+  wofCaption: 'In 1999, Yang Dan studied how cats perceive shapes and motion, discovering that certain regions of their brains respond first to edges and patterns. This insight became a cornerstone for early AI vision research, inspiring convolutional neural networks (CNNs) that detect edges, shapes, and objects in images. By learning from natural vision, AI systems today can “see” and interpret pictures, powering applications from image classification to advanced computer vision.',
+  wofCompanion: 'These adorable companions are part of our team and client family. Want to see your cat featured here? Get in touch with us and join the feline gallery!',
 };
 
 export default en;

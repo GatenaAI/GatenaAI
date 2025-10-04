@@ -43,7 +43,10 @@ const pt = {
   upload: 'Envie seu CV',
   send: 'Enviar',
   language: 'Idioma',
-  madeBy: `Feito com ♥ por ${startupName} 2025 ©`
+  madeBy: `Feito com ♥ por ${startupName} 2025 ©`,
+  wofTitle: 'No Olho do Gato (1999)',
+  wofCaption: 'Em 1999, Yang Dan estudou como os gatos percebem formas e movimentos, descobrindo que certas regiões do cérebro respondem primeiro a bordas e padrões. Essa descoberta se tornou um marco na pesquisa inicial em visão por IA, inspirando redes neurais convolucionais (CNNs) que detectam bordas, formas e objetos em imagens. Ao aprender com a visão natural, os sistemas de IA hoje podem “ver” e interpretar imagens, impulsionando aplicações desde classificação de imagens até visão computacional avançada.',
+  wofCompanion: 'Esses adoráveis companheiros fazem parte do nosso time e da família de clientes. Quer ver seu gato aqui? Entre em contato conosco e junte-se à galeria felina!'
 };
 
 export default pt;

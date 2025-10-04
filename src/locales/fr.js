@@ -43,7 +43,11 @@ const fr = {
   upload: 'Téléversez votre CV',
   send: 'Envoyer',
   language: 'Langue',
-  madeBy: `Fait avec ♥ par ${startupName} 2025 ©`
+  madeBy: `Fait avec ♥ par ${startupName} 2025 ©`,
+  wofTitle: 'Dans l’Œil du Chat (1999)',
+  wofCaption: 'En 1999, Yang Dan a étudié comment les chats perçoivent les formes et les mouvements, découvrant que certaines régions de leur cerveau réagissent d’abord aux contours et aux motifs. Cette découverte est devenue une pierre angulaire de la recherche en vision par IA, inspirant les réseaux neuronaux convolutionnels (CNN) qui détectent les contours, les formes et les objets dans les images. En s’inspirant de la vision naturelle, les systèmes d’IA peuvent aujourd’hui « voir » et interpréter les images, alimentant des applications allant de la classification d’images à la vision par ordinateur avancée.',
+  wofCompanion: `Ces adorables compagnons font partie de notre équipe et de notre famille de clients. Vous voulez voir votre chat ici ? Contactez-nous et rejoignez la galerie féline!`
+
 };
 
 export default fr;

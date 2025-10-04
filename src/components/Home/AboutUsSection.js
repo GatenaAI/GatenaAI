@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useLanguage } from '../../context/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/home/AboutUsSection.css';
 
 export default function AboutUsSection({ t }) {
   const { language } = useLanguage();
+  const navigate = useNavigate();
 
   const scrollMarginTop = language === 'de' ? '50px' : '90px';
+
+  const handleWallOfFame = () => {
+    navigate('/walloffame');
+  };
 
   return (
     <section
@@ -15,18 +21,18 @@ export default function AboutUsSection({ t }) {
       style={{ scrollMarginTop }}
     >
       <div className="about-container">
-        {/* LEFT COLUMN */}
         <div className="about-left fade-in">
           <div className="about-left-inner">
             <h2 className="about-title">{t.aboutUs}</h2>
             <p className="about-description">{t.aboutContentOne}</p>
             <p className="about-description">{t.aboutContentTwo}</p>
             <p className="about-description">{t.aboutContentThree}</p>
-            <button className="wallOfFame-btn">{t.wallOfFame}</button>
+            <button className="wallOfFame-btn" onClick={handleWallOfFame}>
+              {t.wallOfFame}
+            </button>
           </div>
         </div>
 
-        {/* RIGHT COLUMN */}
         <div className="about-right slide-in">
           <div className="about-block">
             <h3 className="block-title">{t.mission}</h3>
