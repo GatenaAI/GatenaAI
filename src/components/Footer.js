@@ -25,13 +25,13 @@ export default function Footer() {
       </div>
 
       <div className="footer-right">
-        <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/gatenaai/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
           <Instagram />
         </a>
-        <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/gatenaai/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
           <Facebook />
         </a>
-        <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/company/gatenaai/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
           <Linkedin />
         </a>
       </div>

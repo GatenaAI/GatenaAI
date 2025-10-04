@@ -1,15 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useLanguage } from '../../context/LanguageContext';
+import { useNavigate } from 'react-router-dom';
 import '../../styles/home/AboutUsSection.css';
 
 export default function AboutUsSection({ t }) {
+  const { language } = useLanguage();
+  const navigate = useNavigate();
+
+  const scrollMarginTop = language === 'de' ? '50px' : '110px';
+
+  const handleWallOfFame = () => {
+    navigate('/walloffame');
+  };
+
   return (
-    <section id="aboutUs" className="about-section">
+    <section
+      id="aboutUs"
+      className="about-section"
+      style={{ scrollMarginTop }}
+    >
       <div className="about-container">
         <div className="about-left fade-in">
           <div className="about-left-inner">
             <h2 className="about-title">{t.aboutUs}</h2>
-            <p className="about-description">{t.aboutContent}</p>
+            <p className="about-description">{t.aboutContentOne}</p>
+            <p className="about-description">{t.aboutContentTwo}</p>
+            <p className="about-description">{t.aboutContentThree}</p>
+            <button className="wallOfFame-btn" onClick={handleWallOfFame}>
+              {t.wallOfFame}
+            </button>
           </div>
         </div>
 
@@ -33,7 +53,10 @@ export default function AboutUsSection({ t }) {
 AboutUsSection.propTypes = {
   t: PropTypes.shape({
     aboutUs: PropTypes.string.isRequired,
-    aboutContent: PropTypes.string.isRequired,
+    aboutContentOne: PropTypes.string.isRequired,
+    aboutContentTwo: PropTypes.string.isRequired,
+    aboutContentThree: PropTypes.string.isRequired,
+    wallOfFame: PropTypes.string.isRequired,
     mission: PropTypes.string.isRequired,
     mission_goal: PropTypes.string.isRequired,
     mission_social: PropTypes.string.isRequired,
