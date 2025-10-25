@@ -1,67 +1,68 @@
+img, video, canvas, svg {
+max-width: 100%;
+height: auto;
+object-fit: contain;
+}
+
 .background-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100vw;
-  height: 100vh;
-
-  background: linear-gradient(
-    135deg,
-    var(--blue-dark) 0%,
-    var(--blue-light) 20%,
-    var(--true-blue) 40%,
-    var(--palatinate-blue) 55%,
-    var(--soft-electric-blue) 63%,
-    var(--palatinate-blue) 70%,
-    var(--true-blue) 80%,
-    var(--medium-yellow) 87%,
-    var(--blue-dark) 100%
-  );
-
-  background-size: 300% 300%;
-  animation: gradientFlow 60s ease-in-out infinite;
-  transition: background 1s ease;
+position: fixed;
+inset: 0;
+z-index: -1;
+width: 100vw;
+height: 100vh;
+height: 100dvh;
+min-height: 100svh;
+pointer-events: none;
+background: linear-gradient(
+135deg,
+var(--blue-dark) 0%,
+var(--blue-light) 20%,
+var(--true-blue) 40%,
+var(--palatinate-blue) 55%,
+var(--soft-electric-blue) 63%,
+var(--palatinate-blue) 70%,
+var(--true-blue) 80%,
+var(--medium-yellow) 87%,
+var(--blue-dark) 100%
+);
+background-size: 300% 300%;
+animation: gradientFlow var(--duration-gradient) var(--bg-gradient-ease) infinite;
+transition: background var(--bg-transition);
+will-change: background-position;
 }
 
 @keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  40% {
-    background-position: 100% 50%;
-  }
-  60% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+0% { background-position: 0% 50%; }
+40% { background-position: 100% 50%; }
+60% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
 }
 
 .background-canvas::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(96, 235, 255, 0.06),
-    transparent 70%
-  );
-  pointer-events: none;
-  mix-blend-mode: screen;
-  filter: blur(40px);
-  opacity: 0.3;
-  animation: pulse 30s ease-in-out infinite;
+content: "";
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse at center, rgba(96, 235, 255, 0.06), transparent 70%);
+pointer-events: none;
+mix-blend-mode: screen;
+filter: blur(var(--blur-bg-glow));
+opacity: var(--opacity-bg-glow);
+animation: pulse var(--duration-pulse) var(--bg-gradient-ease) infinite;
+will-change: transform, opacity;
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.04);
-    opacity: 0.35;
-  }
+0%, 100% { transform: scale(1); opacity: 0.2; }
+50% { transform: scale(1.04); opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+html { scroll-behavior: auto; }
+.background-canvas { animation: none; background-position: 50% 50%; }
+.background-canvas::after { animation: none; transform: none; opacity: 0.2; }
+}
+
+@media (prefers-reduced-data: reduce) {
+.background-canvas { animation: none; background-size: 200% 200%; }
+.background-canvas::after { animation: none; filter: blur(clamp(12px, 3vw, 24px)); mix-blend-mode: normal; opacity: 0.18; }
 }

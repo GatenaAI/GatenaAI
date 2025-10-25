@@ -1,10 +1,17 @@
 :root {
-  --blue-light: #002c5f;
-  --blue-dark: #020d30;
-  --electric-blue: #60ebff;
-  --soft-electric-blue: #3bb4c7;
-  --soft-medium-yellow: #ffbf71;
-  --medium-yellow: #de9b47;
-  --palatinate-blue: #362fd2;
-  --true-blue:#005ddd;
+--blue-light: #002c5f;
+--blue-dark: #020d30;
+--electric-blue: #60ebff;
+--soft-electric-blue: #3bb4c7;
+--soft-medium-yellow: #ffbf71;
+--medium-yellow: #de9b47;
+--palatinate-blue: #362fd2;
+--true-blue: #005ddd;
+--duration-gradient: 60s;
+--duration-pulse: 30s;
+--bg-gradient-ease: ease-in-out;
+--bg-transition: 1s ease;
+--blur-bg-glow: clamp(20px, 6vw, 40px);
+--opacity-bg-glow: 0.3;
+--font-size-base: 1rem;
 }

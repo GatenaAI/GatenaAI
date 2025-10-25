@@ -1,88 +1,173 @@
-.cat-postal-section {
-  width: 100%;
-  height: calc(94.7vh - 90px - 70px); /* full screen minus navbar & footer */
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow: hidden;
-  padding: 2rem;
-  position: relative;
-  box-sizing: border-box;
+:root{
+--nav-h: 90px;
+--footer-h: 70px;
+--section-pad: clamp(0.75rem, 2.5vw, 2rem);
+--card-pad: clamp(1rem, 2.5vw, 2rem);
+--card-radius: 12px;
+--card-gap: clamp(0.75rem, 2vw, 1.25rem);
+--copy-size: clamp(0.95rem, 1.2vw, 1rem);
+--heading-size: clamp(1.25rem, 2vw, 1.8rem);
+--cats-msg-size: clamp(1rem, 1.6vw, 1.2rem);
+--cat-img-w: clamp(84px, 18vw, 200px);
+--hover-scale: 1.3;
 }
 
-/* Card side */
-.centerpiece-wrapper {
-  flex: 0 0 50%;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
+.cat-postal-section{
+width: 100%;
+min-height: 0;
+height: calc(100dvh - max(var(--nav-h), 64px) - max(var(--footer-h), 56px));
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: var(--section-pad);
+overflow: hidden;
+padding: calc(env(safe-area-inset-top, 0px) + var(--section-pad)) var(--section-pad) calc(env(safe-area-inset-bottom, 0px) + var(--section-pad));
+position: relative;
+box-sizing: border-box;
 }
 
-.postal-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 90%;
-  overflow: hidden;
+.centerpiece-wrapper{
+flex: 1 1 50%;
+max-width: clamp(480px, 50%, 720px);
+display: flex;
+justify-content: center;
+align-items: stretch;
+height: 100%;
+min-width: 0;
 }
 
-.postal-card iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+.postal-card{
+background: #fff;
+border-radius: var(--card-radius);
+box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+padding: var(--card-pad);
+display: flex;
+flex-direction: column;
+gap: var(--card-gap);
+width: 100%;
+height: 100%;
+max-height: 100%;
+overflow: hidden;
 }
 
-.centerpiece-text {
-  color: #000;
-  font-size: clamp(0.95rem, 1.2vw, 1rem);
-  line-height: 1.4;
-  text-align: center;
+.postal-card iframe{
+width: 100%;
+height: auto;
+aspect-ratio: 16 / 9;
+border-radius: calc(var(--card-radius) - 4px);
+margin: 0;
+flex: 0 0 auto;
 }
 
-.centerpiece-text h3 {
-  color: #333;
-  margin-bottom: 0.5rem;
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
+.centerpiece-text{
+color: #000;
+font-size: var(--copy-size);
+line-height: 1.45;
+text-align: center;
+overflow-wrap: anywhere;
+word-wrap: break-word;
+text-overflow: ellipsis;
+margin: 0;
+flex: 1 1 auto;
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+}
+
+.centerpiece-text h3{
+color: #333;
+margin: 0 0 0.4rem 0;
+font-size: var(--heading-size);
+line-height: 1.2;
 }
 
 /* Cats side */
-.cats-area {
-  flex: 0 0 60%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
+.cats-area{
+flex: 1 1 50%;
+height: 100%;
+position: relative;
+display: flex;
+flex-wrap: wrap;
+align-content: flex-start;
+min-width: 0;
+overflow: visible;
 }
 
-.cats-message {
-  position: absolute;
-  top: 1rem;
-  width: 90%;
-  text-align: center;
-  color: #fff;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  z-index: 20;
-  pointer-events: none;
+.cats-message{
+position: absolute;
+top: clamp(0.5rem, 1.5vw, 1rem);
+left: 50%;
+transform: translateX(-50%);
+width: min(90%, 1000px);
+text-align: center;
+color: #fff;
+font-size: var(--cats-msg-size);
+z-index: 20;
+pointer-events: none;
+line-height: 1.3;
+padding: 0 0.25rem;
 }
 
-.cat-postal-img {
-  position: absolute;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease;
-  z-index: 5;
+.cat-postal-img{
+position: absolute;
+width: var(--cat-img-w);
+height: auto;
+object-fit: cover;
+border-radius: 12px;
+box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+transition: transform 0.3s ease;
+z-index: 5;
+will-change: transform;
+touch-action: manipulation;
 }
 
-.cat-postal-img:hover {
-  transform: scale(1.3) rotate(0deg);
-  z-index: 10;
+/* Hover/touch refinement */
+.cat-postal-img:hover{
+transform: scale(var(--hover-scale)) rotate(0deg);
+z-index: 10;
+}
+@media (pointer: coarse){
+.cat-postal-img:hover{ transform: none; }
+}
+
+/* Layout adaptations */
+@media (max-width: 1200px){
+.cat-postal-section{ gap: clamp(0.75rem, 2vw, 1.25rem); }
+.centerpiece-wrapper{ max-width: 640px; }
+}
+
+@media (max-width: 980px){
+.cat-postal-section{
+height: auto;
+min-height: calc(100svh - max(var(--nav-h), 64px) - max(var(--footer-h), 56px));
+flex-direction: column;
+align-items: stretch;
+}
+.centerpiece-wrapper{
+flex: 0 1 auto;
+max-width: 100%;
+height: auto;
+}
+.postal-card{
+height: auto;
+max-height: none;
+}
+.cats-area{
+flex: 0 1 auto;
+min-height: clamp(40svh, 52vw, 70svh);
+}
+}
+
+@media (max-width: 640px){
+.cats-message{
+width: 92%;
+}
+.cat-postal-img{
+width: clamp(72px, 26vw, 140px);
+}
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce){
+.cat-postal-img{ transition: none; }
+.cat-postal-img:hover{ transform: none; }
 }
